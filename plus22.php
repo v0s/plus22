@@ -182,7 +182,7 @@ if ($isBinaryGiven) {
 
   copy("_misc/exporter.idc", "$outputDirectory/exporter.idc");
   copy($inputFileName, "$outputDirectory/$inputBasename");
-  system("$idaFoundPath\\idaq64.exe -A -Sexporter.idc \"$outputDirectory/$inputBasename\"");
+  system("\"$idaFoundPath\"\\idaq64.exe -A -Sexporter.idc \"$outputDirectory/$inputBasename\"");
   if (! $verboseMode) {
     @unlink("$outputDirectory/exporter.idc");
     @unlink("$outputDirectory/$idbBasename.i64");
@@ -901,7 +901,7 @@ if ($idaFoundPath === false) {
   @unlink("$outputDirectory/$idbBasename+22.id1");
   @unlink("$outputDirectory/$idbBasename+22.nam");
   @unlink("$outputDirectory/$idbBasename+22.til");
-  system("$idaFoundPath\\idaq.exe -A \"-S$inputBasename+22.idc\" \"$outputDirectory/$inputBasename+22.obj\"");
+  system("\"$idaFoundPath\"\\idaq.exe -A \"-S$inputBasename+22.idc\" \"$outputDirectory/$inputBasename+22.obj\"");
 
   if (!file_exists("$outputDirectory/$inputBasename+22.idb")) {
     echo "[-] IDA failed to produce .idb file with types. You can try to restore types by running $inputBasename+22.idc\n";
