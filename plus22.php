@@ -12,6 +12,8 @@ echo "      ____  ____\n"
    . "  |_||_____|_____|     https://github.com/v0s/plus22\n"
    . "\n";
 
+ini_set("memory_limit", "2000M");
+
 /* === Parse arguments ============================================================== */
 
 $verboseMode = false;
